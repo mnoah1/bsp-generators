@@ -47,7 +47,7 @@ class TypeScriptRenderer(val basepkg: String, val definitions: List<Def>, val ve
             "dependencies": {
               "vscode-jsonrpc": "^8.2.0"
             }
-          }
+        }
         """
 
         return CodegenFile(baseRelPath.resolve("package.json"), contents.trimIndent())
@@ -68,7 +68,7 @@ class TypeScriptRenderer(val basepkg: String, val definitions: List<Def>, val ve
         }
         """
 
-        return CodegenFile(baseRelPath.resolve("tsconfig.json"), contents.toString())
+        return CodegenFile(baseRelPath.resolve("tsconfig.json"), contents.trimIndent())
     }
 
     fun renderImports(): CodeBlock {
